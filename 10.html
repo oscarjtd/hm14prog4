@@ -4,43 +4,72 @@
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, user-scalable=no'>
          <meta name='author' content='Oscar Julian Toro Delgado'>
-         <meta name='keywords' content='html, css, fundamentos'>
+         <meta name='keywords' content='html, css, fundamentos, JSX'>
          <meta name='description' content='recetas'>
         <title>Recetas</title>
     </head>
     <body>
-        <h1><img src="images/recetas.jpg" alt="Recetas">Recetas.com</h1>
-        <nav><a href="">Recetas Principales</a> | <a href="">Postres Latinos</a></nav>
-        <br>
-        <p>Bienvenido a nuetro sitio web sombre gastronomia latina te invitamos a preparar nuestras recetas.</p>
-        <h1>Nuevas Recetas</h1>
-        <p><b>**Arroz Criollo**</b></p>
-        <p>Tiempo de preparación: <b>45 minutos</b> Número de porciones <b>4</b></p>
-
-        <b><h3>Ingredientes</h3></b>
-        <b>
-            <ul>
-                <li>Salsa de tomate</li>
-                <li>2 cucharadas de aceite 14gr</li>
-                <li>1 cebolla larga picada 45gr</li>
-                <li>2 dientes de ajo finamente picado 3gr</li>
-                <li>1 pimenton rojo picado en cuadritos 60gr</li>
-                <li>1 taza de arroz blanco 225gr</li>
-                <li>1 taza de maiz desgranado 79gr</li>
-                <li>150gr de pechuga de pollo cocinado y desmechado</li>
-                <li>Sal al gusto</li>
-            </ul>
-        </b>
-        <b><h3>Preparación</h3></b>
-        <ol>
-            <li>Calentar en una olla el aceite, sofreir la cebolla junto con el ajo, el pimenton por 3 minutos.</li>
-            <li>Adicionar el arroz y continua sofriendo para que se dore.</li>
-            <li>Agregar el pollo, el maiz desgranado y las verduras.</li>
-            <li>Mezclar todo, rectificar sal y  dejar cocinar hasta que seque</li>
-            <li>Bajar el fuego, tapar la olla y continuar la cocción por 25 minutos más</li>
-
-        </ol>
-        <p>Esta rica receta fue proporcionada por Maria Paula</p>
-
+        <div id="root"></div>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+    
+            const data = {
+                logo: "./images/recetas.jpg",
+                title_1: "Recetas.com",
+                heading_1: "Recetas Principales",
+                headingSeparator: " | ",
+                heading_2: "Postres Latinos",
+                paragraph_1: "Bienvenido a nuestro sitio web sobre gastronomia latina, te invitamos a preparar nuestras recetas.",
+                subtitle_1: "Nuevas Recetas",
+                subtitle_2: "**Arroz Criollo**",
+                paragraph_2: "Tiempo de preparacion: ",
+                paragraph_3: "45 minutos ",
+                paragraph_4: "Numero de porciones ",
+                paragraph_5: "4",
+                subtitle_3: "Ingredientes",
+                listIngredientes: ["Salsa de tomate","2 cucharadas de aceite 14gr","1 cebolla larga picada 45gr","2 dientes de ajo finamente picado 3gr","1 pimenton rojo picado en cuadritos 60gr","1 taza de arroz blanco 225gr","1 taza de maiz desgranado 79gr","150gr de pechuga de pollo cocinado y desmechado","Sal al gusto"],
+                subtitle_4: "Preparacion",
+                listPreparacion: ["Calentar en una olla el aceite, sofreir la cebolla junto con el ajo, el pimenton por 3 minutos.","Adicionar el arroz y continuar sofriendo para que se dore","Agregar el pollo, el maiz desgranado y las verduras","Mezclar todo, rectificar sal y dejar cocinar hasta que seque.","Bajar el fuego, tapar la olla y continuar la coccion por 25 minutos mas."],
+                footer: "Esta rica receta fue proporcionada por Maria Paula."
+            }
+    
+    
+            // data from Header & Enlaces Favoritos
+            const title_x = <h1><img src={data.logo}></img>{data.title_1}</h1>;
+            const headingNavBar = <p><a href="#">{data.heading_1}</a>{data.headingSeparator}<a href="#">{data.heading_2}</a></p>;
+            const paragraph_1 = <p>{data.paragraph_1}</p>;
+            const subtitle_1 = <h2>{data.subtitle_1}</h2>;
+            const subtitle_2 = <h3>{data.subtitle_2}</h3>
+            const paragraph_2 = <p>{data.paragraph_2}<strong>{data.paragraph_3}</strong>{data.paragraph_4}<strong>{data.paragraph_5}</strong></p>
+            const subtitle_3 = <h4>{data.subtitle_3}</h4>
+            const listIngredientes = <ul><li><b>{data.listIngredientes[0]}</b></li><li><b>{data.listIngredientes[1]}</b></li><li><b>{data.listIngredientes[2]}</b></li><li><b>{data.listIngredientes[3]}</b></li><li><b>{data.listIngredientes[4]}</b></li><li><b>{data.listIngredientes[5]}</b></li><li><b>{data.listIngredientes[6]}</b></li><li><b>{data.listIngredientes[7]}</b></li><li><b>{data.listIngredientes[8]}</b></li></ul>;
+            const subtitle_4 = <h4>{data.subtitle_4}</h4>;
+            const listPreparacion = <ol><li>{data.listPreparacion[0]}</li><li>{data.listPreparacion[1]}</li><li>{data.listPreparacion[2]}</li><li>{data.listPreparacion[3]}</li><li>{data.listPreparacion[4]}</li></ol>
+            const footer = <p>{data.footer}</p>;
+    
+            // element to build the website structure
+            const element = (
+                <div>
+                    {title_x}
+                    {headingNavBar}
+                    {paragraph_1}
+                    {subtitle_1}
+                    {subtitle_2}
+                    {paragraph_2}
+                    {subtitle_3}
+                    {listIngredientes}
+                    {subtitle_4}
+                    {listPreparacion}
+                    {footer}
+                </div>
+            );
+    
+            ReactDOM.render(
+            element,
+            document.getElementById('root')
+            );
+            </script>
     </body>
 </html>

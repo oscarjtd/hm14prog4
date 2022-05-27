@@ -4,66 +4,106 @@
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, user-scalable=no'>
      <meta name='author' content='Oscar Julian Toro Delgado'>
-     <meta name='keywords' content='html, css, fundamentos'>
+     <meta name='keywords' content='html, css, fundamentos, JSX'>
      <meta name='description' content='Platos de la semana'>
     <title>Platos de la semana</title>
   </head>
   <body>
-    <h1>Cartelera de vuelos - Aeropuerto el mirador</h1>
-    <h2>Llegadas</h2>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Aerolinea</th>
-                <th>Nro. vuelo</th>
-                <th>Estatus</th>
-                <th>Hora estimada</th>
-                <th>Puerta</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>AIRLAN</td>
-                <td>355</td>
-                <td>ATERRIZO</td>
-                <td>2:45PM</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>VIAJAR</td>
-                <td>556</td>
-                <td>RETARDADO</td>
-                <td>2:35PM</td>
-                <td>8</td>
-            </tr>
-            <tr>
-                <td>AEROVUELO</td>
-                <td>1234</td>
-                <td>EN vuelo</td>
-                <td>3:45PM</td>
-                <td>8</td>
-            </tr>
-        </tbody>
-    </table>
-    <h2>Salidas</h2>
-    <table border='1'>
-        <thead>
-            <th>Aerolinea</th>
-            <th>Nro. vuelo</th>
-            <th>Estatus</th>
-            <th>Hora estimada</th>
-            <th>Puerta</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>AIRLAN</td>
-                <td>355</td>
-                <td>EMBARCANDO</td>
-                <td>2:15PM</td>
-                <td>1</td>
-            </tr>
-        </tbody>
-    </table>
+        const data = {
+            title_1: "Cartelera de vuelos - Aeropuerto el mirador",
+            subtitle_1: "Llegadas",
+            contentLlegadas_0: ["Aerolinea","Nro. vuelo","Estatus","Hora estimada","Puerta"],
+            contentLlegadas_1: ["AIRLAN",355,"ATERRIZO","2:45 PM",3],
+            contentLlegadas_2: ["VIAJAR",556,"RETARDADO","2:35 PM",6],
+            contentLlegadas_3: ["AEROVUELO",1234,"EN VUELO","3:45 PM",8],
+            subtitle_2: "Salidas",
+            contentSalidas_0: ["Aerolinea","Nro. vuelo","Estatus","Hora estimada","Puerta"],
+            contentSalidas_1: ["AIRLAN",355,"EMBARCANDO","2:15 PM",1]
+        }
+
+
+        // data from Header & Enlaces Favoritos
+        const title_x = <h1>{data.title_1}</h1>;
+        const subtitle_1 = <h2>{data.subtitle_1}</h2>;
+        const tableLlegadas = <table border='1'>
+            <thead>
+                <tr>
+                    <th>{data.contentLlegadas_0[0]}</th>
+                    <th>{data.contentLlegadas_0[1]}</th>
+                    <th>{data.contentLlegadas_0[2]}</th>
+                    <th>{data.contentLlegadas_0[3]}</th>
+                    <th>{data.contentLlegadas_0[4]}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{data.contentLlegadas_1[0]}</td>
+                    <td>{data.contentLlegadas_1[1]}</td>
+                    <td>{data.contentLlegadas_1[2]}</td>
+                    <td>{data.contentLlegadas_1[3]}</td>
+                    <td>{data.contentLlegadas_1[4]}</td>
+                </tr>
+                <tr>
+                    <td>{data.contentLlegadas_2[0]}</td>
+                    <td>{data.contentLlegadas_2[1]}</td>
+                    <td>{data.contentLlegadas_2[2]}</td>
+                    <td>{data.contentLlegadas_2[3]}</td>
+                    <td>{data.contentLlegadas_2[4]}</td>
+                </tr>
+                <tr>
+                    <td>{data.contentLlegadas_3[0]}</td>
+                    <td>{data.contentLlegadas_3[1]}</td>
+                    <td>{data.contentLlegadas_3[2]}</td>
+                    <td>{data.contentLlegadas_3[3]}</td>
+                    <td>{data.contentLlegadas_3[4]}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        const subtitle_2 = <h2>{data.subtitle_2}</h2>;
+        const tableSalidas = <table border='1'>
+      
+            <thead>
+                <tr>
+                    <th>{data.contentSalidas_0[0]}</th>
+                    <th>{data.contentSalidas_0[1]}</th>
+                    <th>{data.contentSalidas_0[2]}</th>
+                    <th>{data.contentSalidas_0[3]}</th>
+                    <th>{data.contentSalidas_0[4]}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{data.contentSalidas_1[0]}</td>
+                    <td>{data.contentSalidas_1[1]}</td>
+                    <td>{data.contentSalidas_1[2]}</td>
+                    <td>{data.contentSalidas_1[3]}</td>
+                    <td>{data.contentSalidas_1[4]}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        // element to build the website structure
+        const element = (
+            <div>
+                {title_x}
+                {subtitle_1}
+                {tableLlegadas}
+                {subtitle_2}
+                {tableSalidas}
+            </div>
+        );
+
+        ReactDOM.render(
+        element,
+        document.getElementById('root')
+        );
+        </script>
   </body>
 </html>
