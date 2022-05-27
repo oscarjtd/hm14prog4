@@ -1,27 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>   
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, user-scalable=no'>
-     <meta name='author' content='Oscar Julian Toro Delgado'>
-     <meta name='keywords' content='html, css, fundamentos'>
-     <meta name='description' content='Enlaces favoritos'>
-    <title>Pagina incial de Juan Tuesta</title>
-  </head>
-  <body>
-      <h1>Página inical de Juan Tuesta</h1>
-      <p>
-        Bienvenido a mi página personal. Soy alumno de la universidad de Deusto y esta es mi página inicial, con la lista
-        con la lista de mis enlaces favoritos y otra información de interés.            
-      </p>
-      <h2>Enlaces favoritos:</h2>
-      <ol>
-          <li>Internet</li>
-          <li> <a href="https://google.com">Google </a> </li>
-          <li>Aldea Global</li>
-          <li><a href="https://docs.google.com/document/d/1fAXdPgBMnxUnW43VRSwg69Ca79HItrBTeqOig9Iako0/edit"> Manual de HTML</a></li>
-      </ol>
-      <p><em>Juan Tuesta, University de Deusto, marzo 2002</em></p>
 
-  </body>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, user-scalable=no'>
+  <meta name='author' content='Oscar Julian Toro Delgado'>
+  <meta name='keywords' content='html, css, fundamentos, JSX'>
+  <meta name='description' content='Enlaces favoritos'>
+  <title>Pagina incial de Juan Tuesta</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script type="text/babel">
+
+    const data = {
+      title_1: "Página inicial de Juan Tuesta",
+      paragraph_1: "Bienvenido a mi pagina personal. Soy un alumno de la Universidad de Deusto y esta es mi pagina inicial, con la lista de mis enlaces favoritos y otra informacion de interes.",
+      subtitle_1: "Enlaces favoritos:",
+      list_1: "Internet",
+      list_2: "Google",
+      list_3: "Aldea Global",
+      list_4: "Manual de HTML",
+      footer: "Juan Tuesta, Universidad de Deusto, marzo 2002."
+    }
+
+
+    const title_x = <h1>{data.title_1}</h1>;
+    const paragraph_1 = <p>{data.paragraph_1}</p>
+    const subtitle_1 = <h2>{data.subtitle_1}</h2>;
+    const listElements = <ol><li>{data.list_1}</li><li><a href='http://google.com' target='_blank'>{data.list_2}</a></li><li>{data.list_3}</li><li><a href='https://www.manualweb.net/html/' target='_blank'>{data.list_4}</a></li></ol>
+    const footer = <i>{data.footer}</i>
+
+    const element = (
+      <div>
+        {title_x}
+        {paragraph_1}
+        {subtitle_1}
+        {listElements}
+        {footer}
+      </div>
+    );
+
+    ReactDOM.render(
+      element,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+
 </html>
