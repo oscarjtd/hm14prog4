@@ -4,14 +4,44 @@
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, user-scalable=no'>
          <meta name='author' content='Oscar Julian Toro Delgado'>
-         <meta name='keywords' content='html, css, fundamentos'>
+         <meta name='keywords' content='html, css, fundamentos, JSX'>
          <meta name='description' content='Informacion de conciertos'>
         <title>Conciertos</title>
     </head>
     <body>
-        <h1><img src="images/concert_logo.png" alt="conciertos"> Tu concierto</h1>
-        <p>Bienvenido a este blog de conciertos...</p>
-        <img src="images/concert.jpg" alt="Conciertos">
+        <div id="root"></div>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+        
+        const data = {
+            logo: "./images/concert_logo.png",
+            title_1: "Tu concierto",
+            paragraph: "Bienvenido a este blog de conciertos...",
+            background: "./images/concert.jpg"
+        }
+
+
+        // data from Header & Enlaces Favoritos
+        const title_x = <h1><img src={data.logo}></img>{data.title_1}</h1>;
+        const paragraph = <p>{data.paragraph}</p>;
+        const background = <img src={data.background} width="100%"></img>
+
+        // element to build the website structure
+        const element = (
+            <div>
+                {title_x}
+                {paragraph}
+                {background}
+            </div>
+        );
+
+        ReactDOM.render(
+        element,
+        document.getElementById('root')
+        );
+        </script>
 
     </body>
 </html>
