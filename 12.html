@@ -4,18 +4,48 @@
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, user-scalable=no'>
      <meta name='author' content='Oscar Julian Toro Delgado'>
-     <meta name='keywords' content='html, css, fundamentos'>
+     <meta name='keywords' content='html, css, fundamentos, JSX'>
      <meta name='description' content='Audio'>
     <title>Audio</title>
   </head>
   <body>
-      <h1>Título en encabezado</h1>
-      <p>Descripción del audio</p>
-      <audio controls >
-        <source src='resources/audio.mp3' type='audio/mpeg'>
-        Tu Navegador no soporta este elemento de audio
-      </audio>
-      <p>Derechos reservados (Pie)</p>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+
+        const data = {
+            title_1: "Título en encabezado",
+            description: "Descripción del audio",
+            audioSource: "./resources/audio.mp3",
+            footer: "Derechos Reservados (Pie)"
+        }   
+
+
+        const title_x = <h1>{data.title_1}</h1>;
+        const description = <p>{data.description}</p>;
+        const audioPlayer = 
+        <audio controls preload='auto'>
+            <source src={data.audioSource} type='audio/mpeg'></source>
+        </audio>
+        const footer = <p>{data.footer}</p>;
+
+
+        const element = (
+            <div>
+                {title_x}
+                {description}
+                {audioPlayer}
+                {footer}
+            </div>
+        );
+
+        ReactDOM.render(
+        element,
+        document.getElementById('root')
+        );
+        </script>
 
       
   </body>
