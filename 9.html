@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>   
+
+<head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, user-scalable=no'>
-     <meta name='author' content='Oscar Julian Toro Delgado'>
-     <meta name='keywords' content='html, css, fundamentos, JSX'>
-     <meta name='description' content='Platos de la semana'>
+    <meta name='author' content='Oscar Julian Toro Delgado'>
+    <meta name='keywords' content='html, css, fundamentos, JSX'>
+    <meta name='description' content='Platos de la semana'>
     <title>Platos de la semana</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="root"></div>
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
@@ -18,17 +20,16 @@
         const data = {
             title_1: "Cartelera de vuelos - Aeropuerto el mirador",
             subtitle_1: "Llegadas",
-            contentLlegadas_0: ["Aerolinea","Nro. vuelo","Estatus","Hora estimada","Puerta"],
-            contentLlegadas_1: ["AIRLAN",355,"ATERRIZO","2:45 PM",3],
-            contentLlegadas_2: ["VIAJAR",556,"RETARDADO","2:35 PM",6],
-            contentLlegadas_3: ["AEROVUELO",1234,"EN VUELO","3:45 PM",8],
+            contentLlegadas_0: ["Aerolinea", "Nro. vuelo", "Estatus", "Hora estimada", "Puerta"],
+            contentLlegadas_1: ["AIRLAN", 355, "ATERRIZO", "2:45 PM", 3],
+            contentLlegadas_2: ["VIAJAR", 556, "RETARDADO", "2:35 PM", 6],
+            contentLlegadas_3: ["AEROVUELO", 1234, "EN VUELO", "3:45 PM", 8],
             subtitle_2: "Salidas",
-            contentSalidas_0: ["Aerolinea","Nro. vuelo","Estatus","Hora estimada","Puerta"],
-            contentSalidas_1: ["AIRLAN",355,"EMBARCANDO","2:15 PM",1]
+            contentSalidas_0: ["Aerolinea", "Nro. vuelo", "Estatus", "Hora estimada", "Puerta"],
+            contentSalidas_1: ["AIRLAN", 355, "EMBARCANDO", "2:15 PM", 1]
         }
 
 
-        // data from Header & Enlaces Favoritos
         const title_x = <h1>{data.title_1}</h1>;
         const subtitle_1 = <h2>{data.subtitle_1}</h2>;
         const tableLlegadas = <table border='1'>
@@ -68,7 +69,7 @@
 
         const subtitle_2 = <h2>{data.subtitle_2}</h2>;
         const tableSalidas = <table border='1'>
-      
+
             <thead>
                 <tr>
                     <th>{data.contentSalidas_0[0]}</th>
@@ -89,7 +90,6 @@
             </tbody>
         </table>
 
-        // element to build the website structure
         const element = (
             <div>
                 {title_x}
@@ -101,9 +101,10 @@
         );
 
         ReactDOM.render(
-        element,
-        document.getElementById('root')
+            element,
+            document.getElementById('root')
         );
-        </script>
-  </body>
+    </script>
+</body>
+
 </html>
