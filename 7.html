@@ -16,56 +16,56 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script type="text/babel">
-    
-    const data = {
-        title_1: "Destinos Turisticos",
-        subtitle: "América",
-        arg: "Argentina",
-        arg_1:"Buenos Aires",
-        arg_2:"Bariloche",
-        bra:"Brasil",
-        bra_1:"Rio de Janeiro",
-        bra_2:"Brasilia",
-        chi:"Chile",
-        chi_1:"Santiago",
-        chi_2:"Valparaiso",
-        col:"Colombia",
-        col_1:"Bogotá",
-        col_2:"Cartagena de Indias",
-        usa:"Estados Unidos",
-        usa_1:"New York",
-        usa_2:"San Francisco",
-        mex:"Mexico",
-        mex_1:"Cancun",
-        mex_2:"Acapulco",
-        per:"Peru",
-        per_1:"Lima",
-        per_2:"Cuzco",
-        ven:"Venezuela",
-        ven_1:"Margarita",
-        ven_2:"Mérida"
-    
-    }
+
+        const data = {
+            title_1: "Destinos Turisticos",
+            subtitle: "América",
+            arg: "Argentina",
+            arg_1: "Buenos Aires",
+            arg_2: "Bariloche",
+            bra: "Brasil",
+            bra_1: "Rio de Janeiro",
+            bra_2: "Brasilia",
+            chi: "Chile",
+            chi_1: "Santiago",
+            chi_2: "Valparaiso",
+            col: "Colombia",
+            col_1: "Bogotá",
+            col_2: "Cartagena de Indias",
+            usa: "Estados Unidos",
+            usa_1: "New York",
+            usa_2: "San Francisco",
+            mex: "Mexico",
+            mex_1: "Cancun",
+            mex_2: "Acapulco",
+            per: "Peru",
+            per_1: "Lima",
+            per_2: "Cuzco",
+            ven: "Venezuela",
+            ven_1: "Margarita",
+            ven_2: "Mérida"
+
+        }
 
 
-    // data from Header & Enlaces Favoritos
-    const title_x = <h1>{data.title_1}</h1>;
-    const subtitle = <h2>{data.subtitle}</h2>
-    const listDest = <ol><li><strong>{data.arg}</strong><ol><li>{data.arg_1}</li><li>{data.arg_2}</li></ol></li><li><strong>{data.bra}</strong><ol><li>{data.bra_1}</li><li>{data.bra_2}</li></ol></li><li><strong>{data.chi}</strong><ol><li>{data.chi_1}</li><li>{data.chi_2}</li></ol></li><li><strong>{data.col}</strong><ol><li>{data.col_1}</li><li>{data.col_2}</li></ol></li><li><strong>{data.usa}</strong><ol><li>{data.usa_1}</li><li>{data.usa_2}</li></ol></li><li><strong>{data.mex}</strong><ol><li>{data.mex_1}</li><li>{data.mex_2}</li></ol></li><li><strong>{data.per}</strong><ol><li>{data.per_1}</li><li>{data.per_2}</li></ol></li><li><strong>{data.ven}</strong><ol><li>{data.ven_1}</li><li>{data.ven_2}</li></ol></li></ol>
+        // data from Header & Enlaces Favoritos
+        const title_x = <h1>{data.title_1}</h1>;
+        const subtitle = <h2>{data.subtitle}</h2>
+        const listDest = <ol><li><strong>{data.arg}</strong><ol><li>{data.arg_1}</li><li>{data.arg_2}</li></ol></li><li><strong>{data.bra}</strong><ol><li>{data.bra_1}</li><li>{data.bra_2}</li></ol></li><li><strong>{data.chi}</strong><ol><li>{data.chi_1}</li><li>{data.chi_2}</li></ol></li><li><strong>{data.col}</strong><ol><li>{data.col_1}</li><li>{data.col_2}</li></ol></li><li><strong>{data.usa}</strong><ol><li>{data.usa_1}</li><li>{data.usa_2}</li></ol></li><li><strong>{data.mex}</strong><ol><li>{data.mex_1}</li><li>{data.mex_2}</li></ol></li><li><strong>{data.per}</strong><ol><li>{data.per_1}</li><li>{data.per_2}</li></ol></li><li><strong>{data.ven}</strong><ol><li>{data.ven_1}</li><li>{data.ven_2}</li></ol></li></ol>
 
-    // element to build the website structure
-    const element = (
-        <div>
-            {title_x}
-            {subtitle}
-            {listDest}
-        </div>
-    );
+        // element to build the website structure
+        const element = (
+            <div>
+                {title_x}
+                {subtitle}
+                {listDest}
+            </div>
+        );
 
-    ReactDOM.render(
-    element,
-    document.getElementById('root')
-    );
+        ReactDOM.render(
+            element,
+            document.getElementById('root')
+        );
     </script>
 
 </body>
